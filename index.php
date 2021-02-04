@@ -1,5 +1,16 @@
 <?php
-session_start()
+session_start();
+include './models/database.php';
+include './models/review.php';
+
+$database = new Database();
+$review = new review($database);
+
+if (isset($_POST['verstuur_review'])) {
+    $review->add();
+    var_dump('jojo');
+}
+
 ?>
 <head>
     <meta name="viewport"
@@ -152,6 +163,45 @@ session_start()
                             </div>
 
                         </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="p4">
+                <div class="reviews">
+
+                    <div class="ptitle">
+                        <h2>Reviews</h2>
+                    </div>
+
+                        <div class="contact-container">
+                            <form action="" method="post">
+                                <label>Voornaam</label><input type="text" name="voornaam_review">
+                                <label>Achternaam</label><input type="text" name="achternaam_review">
+                                <label>E-mail</label><input type="email" name="email_review">
+                                <label>Bericht</label><input type="text" placeholder="Type hier je bericht.." name="message_review">
+                                <button type="submit" name="verstuur_review"></button>
+                            </form>
+                </div>
+            </div>
+
+            <div class="p5">
+                <div class="contact">
+
+                    <div class="ptitle">
+                        <h2>Contact</h2>
+                    </div>
+
+                    <div class="contact-container">
+                        <form action="" method="post" >
+                            <label>Voornaam</label><input type="text" name="voornaam_contact">
+                            <label>Achternaam</label><input type="text" name="achternaam_contact">
+                            <label>E-mail</label><input type="email" name="email_contact">
+                            <label>Tel.</label><input type="tel" name="tel_contact">
+                            <label>Bericht</label><input type="text" placeholder="Type hier je bericht.." name="message_contact">
+                            <a href="" type="submit" name="verstuur_contact">Verstuur</a>
+                        </form>
                     </div>
 
                 </div>
