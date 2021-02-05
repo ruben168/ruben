@@ -19,7 +19,7 @@ if (isset($_POST['verstuur_review'])) {
     <meta name="author" content="Ruben Kruiter">
     <meta name="description" content="Protfolio van Ruben Kruiter">
     <meta name="keywords" content="ruben, kruiter, ruben kruiter,  rubenkruiter, portfolio ruben, portfolio ruben kruiter">
-    <link rel="stylesheet" href="../css/index.scss">
+    <link rel="stylesheet" href="/css/index.scss">
 </head>
 <body>
 
