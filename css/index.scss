@@ -4,12 +4,102 @@ body {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  background: linear-gradient(rgba(10,10,10,.8),rgba(0,0,0,.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px),
+  background: linear-gradient(rgba(10, 10, 10, .8), rgba(0, 0, 0, .9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px),
   url('../Images/Index/background.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'Quicksand', sans-serif;
+  color: white;
 }
+
+.container {
+
+}
+
+.ptitle {
+  text-align: center;
+}
+
+.p1, .p2, .p3, .p4, .p5 {
+  height: 100vh;
+  overflow: hidden;
+
+}
+
+// Reviews
+
+
+.reviews-container {
+  opacity: 0;
+}
+
+.rating-container {
+  width: 100%;
+}
+.rating {
+  width: 120px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin: 2px;
+}
+
+.rating label:before {
+  content: '';
+  background-repeat: no-repeat;
+  background-image: url("../Images/Index/staroff.svg");
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: block;
+  z-index: -1;
+}
+
+.rating label:after {
+  content: '';
+  background-repeat: no-repeat;
+  background-image: url("../Images/Index/staron.svg");
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+
+}
+
+.rating label:hover:after,
+.rating input:hover ~ label:after,
+.rating input:checked ~ label:after {
+  opacity: 1;
+}
+
+.star {
+  background-repeat: no-repeat;
+  background-image: url("../Images/Index/staron.svg");
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+
+
 
 
 
