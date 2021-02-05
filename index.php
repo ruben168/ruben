@@ -218,7 +218,7 @@ if (isset($_POST['verstuur_review'])) {
                         foreach ($reviews->get() as $review) {
 
                             $stars = '';
-                            for ($i = 0; $i <= $review['review_rating']; $i++) {
+                            for ($i = 0; $i < $review['review_rating']; $i++) {
                                 $stars .= '<div class="star"> </div>';
                             };
 
@@ -234,11 +234,11 @@ if (isset($_POST['verstuur_review'])) {
                             <label>E-mail</label><input type="email" name="email_review">
                             <div class="rating-container">
                                 <div class="rating">
-                                    <input type="radio" name="rating_review" value="1" id="star1"><label for="star1"></label>
-                                    <input type="radio" name="rating_review" value="2" id="star2"><label for="star2"></label>
-                                    <input type="radio" name="rating_review" value="3" id="star3"><label for="star3"></label>
-                                    <input type="radio" name="rating_review" value="4" id="star4"><label for="star4"></label>
                                     <input type="radio" name="rating_review" value="5" id="star5"><label for="star5"></label>
+                                    <input type="radio" name="rating_review" value="4" id="star4"><label for="star4"></label>
+                                    <input type="radio" name="rating_review" value="3" id="star3"><label for="star3"></label>
+                                    <input type="radio" name="rating_review" value="2" id="star2"><label for="star2"></label>
+                                    <input type="radio" name="rating_review" value="1" id="star1"><label for="star1"></label>
                                 </div>
                             </div>
                             <label>Bericht</label><input type="text" placeholder="Type hier je bericht.." name="message_review">
