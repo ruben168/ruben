@@ -45,4 +45,10 @@ class review
 
         return $reviews->fetchAll();
     }
+
+    public function stats()
+    {
+        $total = $this->conn->query('SELECT COUNT(*) FROM reviews');
+        return $total->fetchColumn();
+    }
 }

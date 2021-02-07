@@ -4,12 +4,13 @@ include './models/database.php';
 include './models/review.php';
 
 $database = new database();
-$review = new review($database);
 $reviews = new review($database);
 
+$count = '';
 
 if (isset($_POST['verstuur_review'])) {
-    $review->add();
+
+    $reviews->add();
 }
 
 ?>
@@ -222,10 +223,19 @@ if (isset($_POST['verstuur_review'])) {
                                 $stars .= '<div class="star"> </div>';
                             };
 
+
+
                             echo '<div class="review">' . '<div class="review-fullname">' . $review['review_name'] . ' ' . $review['review_lastname'] . '</div>' . '<div class="review-rating">' . $stars   . '</div>' . '<div class="review-message">' . $review['review_message'] . '</div>' . '</div>';
                         }
                         ?>
                     </div>
+                    <div class="reviews-stats">
+                        <?php
+                        echo '<div class="stats-counter">' . $reviews->stats() . '</div>';
+                        echo '<div class="stats-counter">' . $reviews->stats() . '</div>';
+                        ?>
+                    </div>
+                    <a href="">Schrijf een review</a>
 
                     <div class="reviews-container">
                         <form action="" method="post">
