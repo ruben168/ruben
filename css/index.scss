@@ -60,31 +60,31 @@ body {
   height: 20px;
   position: relative;
   margin: 2px;
-  &:before {
-    content: '';
-    background-repeat: no-repeat;
-    background-image: url("../Images/Index/staroff.svg");
-    background-position: center;
-    background-size: contain;
-    position: relative;
-    width: 20px;
-    height: 20px;
-    display: block;
-    z-index: -1;
-  }
-  &:after {
-    content: '';
-    background-repeat: no-repeat;
-    background-image: url("../Images/Index/staron.svg");
-    background-position: center;
-    background-size: contain;
-    width: 20px;
-    height: 20px;
-    display: block;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-  }
+}
+.rating label:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url("../Images/Index/staroff.svg");
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: block;
+  z-index: -1;
+}
+.rating label:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url("../Images/Index/staron.svg");
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 0;
+  opacity: 0;
 }
 
 .rating label:hover:after,

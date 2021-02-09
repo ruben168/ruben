@@ -46,9 +46,27 @@ class review
         return $reviews->fetchAll();
     }
 
-    public function stats()
+    public function statsAmount()
     {
         $total = $this->conn->query('SELECT COUNT(*) FROM reviews');
         return $total->fetchColumn();
+    }
+
+    public function statsAverage()
+    {
+
+        $ratings = $this->conn->prepare('SELECT review_rating FROM reviews');
+        $ratings->execute();
+
+        foreach ($ratings as $rating)
+        {
+        $note = array_sum($rating);
+
+        };
+
+
+
+        return var_dump(array_sum($rating));
+
     }
 }

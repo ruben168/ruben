@@ -6,8 +6,6 @@ include './models/review.php';
 $database = new database();
 $reviews = new review($database);
 
-$count = '';
-
 if (isset($_POST['verstuur_review'])) {
 
     $reviews->add();
@@ -224,15 +222,14 @@ if (isset($_POST['verstuur_review'])) {
                             };
 
 
-
-                            echo '<div class="review">' . '<div class="review-fullname">' . $review['review_name'] . ' ' . $review['review_lastname'] . '</div>' . '<div class="review-rating">' . $stars   . '</div>' . '<div class="review-message">' . $review['review_message'] . '</div>' . '</div>';
+                            echo '<div class="review">' . '<div class="review-fullname">' . $review['review_name'] . ' ' . $review['review_lastname'] . '</div>' . '<div class="review-rating">' . $stars . '</div>' . '<div class="review-message">' . $review['review_message'] . '</div>' . '</div>';
                         }
                         ?>
                     </div>
                     <div class="reviews-stats">
                         <?php
-                        echo '<div class="stats-counter">' . $reviews->stats() . '</div>';
-                        echo '<div class="stats-counter">' . $reviews->stats() . '</div>';
+                        echo '<div class="stats-counter">' . $reviews->statsAmount() . '</div>';
+                        echo '<div class="stats-counter">' . $reviews->statsAverage() . '</div>';
                         ?>
                     </div>
                     <a href="">Schrijf een review</a>
